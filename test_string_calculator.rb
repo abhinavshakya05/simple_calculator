@@ -31,4 +31,10 @@ class StringCalculatorTest < Minitest::Test
     calculator = StringCalculator.new
     assert_equal 3, calculator.add("//;\n1;2")
   end
+
+  def test_negative_numbers
+    calculator = StringCalculator.new
+    exception = assert_raises(RuntimeError) { calculator.add("-1,2") }
+    assert_equal "negative numbers not allowed: -1", exception.message
+  end
 end
