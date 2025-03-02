@@ -21,4 +21,9 @@ class StringCalculatorTest < Minitest::Test
     calculator = StringCalculator.new
     assert_equal 10, calculator.add("1,2,3,4")
   end
+
+  def test_newline_between_numbers
+    calculator = StringCalculator.new
+    assert_equal 6, calculator.add("1\n2,3")
+  end
 end
