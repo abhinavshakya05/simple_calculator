@@ -11,4 +11,9 @@ class StringCalculatorTest < Minitest::Test
     calculator = StringCalculator.new
     assert_equal 1, calculator.add("1")
   end
+
+  def test_multiple_numbers
+    calculator = StringCalculator.new
+    assert_equal 6, calculator.add("1,5")
+  end
 end
